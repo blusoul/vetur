@@ -24,7 +24,7 @@ export function doHover(
     for (const provider of tagProviders) {
       let hover: Hover | null = null;
       provider.collectTags((t, documentation) => {
-        if (t !== tag) {
+        if (t.toLowerCase() !== tag) {
           return;
         }
         hover = { contents: toMarkupContent(documentation), range };
